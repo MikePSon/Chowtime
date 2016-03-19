@@ -1,0 +1,51 @@
+<%= render 'layouts/page_header' %>
+
+<%= stylesheet_link_tag "plugins", "data-turbolinks-track" => true %>
+
+<div class="outlet">
+<div class="row">
+  <div class="gallery">
+    <!-- start .gallery -->
+    <div class="gallery-toolbar">
+      <div class="col-lg-12">
+        <button class="filter btn btn-primary btn-alt mr5" data-filter="all">All</button>
+        <% @tags.each do |thisTag| %>
+          <button class="filter btn btn-primary btn-alt mr5" data-filter=".<%= thisTag.name.downcase %>"><%= thisTag.name %></button>
+        <% end %>
+      </div>
+    </div>
+    <div class="gallery-inner">
+      
+      <% @recipes.each do |recipe| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 <% recipe.recipe_tags.each do |thisTag| %><%= thisTag.name.downcase %> <% end%>" data-my-order="<%= recipe.id %>">
+          <%= link_to recipe do %>
+            <%= image_tag recipe.foodPic.url(:medium), :class => "centerImage" %>
+          <% end %>
+          <div class="gallery-image-controls">
+            <div class="recipe-name">
+              <h5><%= recipe.name %></h5>
+            </div>
+            <div class="action-btn">
+              <%= link_to recipe, :class => "btn btn-primary btn-round tipB" do %>
+                <i class="ec-search"></i>
+              <% end %>
+              <%= link_to edit_recipe_path(recipe), :class => "btn btn-primary btn-round tipB" do %>
+                <i class="ec-pencil"></i>
+              <% end %>
+              <%= link_to recipe, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary btn-round tipB" do %>
+                <i class="ec-trashcan"></i>
+              <% end %>
+            </div>
+          </div>
+      </div>
+      <% end %>
+
+
+    </div>
+  </div>
+</div>
+</div>
+
+<%= javascript_include_tag "plugins/misc/gallery/jquery.magnific-popup.min", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "plugins/misc/mixitup/jquery.mixitup.min", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "pages/gallery", "data-turbolinks-track" => true %>

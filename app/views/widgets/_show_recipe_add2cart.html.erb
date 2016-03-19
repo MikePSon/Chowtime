@@ -1,0 +1,34 @@
+<div class="col-xs-12">
+	<h5>You are missing: <%= @missingIngredients.count %> ingredient<% if @missingIngredients.count == 0 %>s<% end %>.</h5>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Ingredient</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @missingIngredients.each do |thisIng| %>
+						<tr>
+							<td>
+								<%= thisIng.name %>
+							</td>
+							<td>
+								<%
+									@thisName = thisIng.name
+									@thisUser = current_user.id
+									@userHas = false
+									@thisGroup = thisIng.food_group_id
+								%>
+								<%= link_to "Add to Cart", kitchen_items_path(:name => @thisName, :user_id => @thisUser, :userHas => false, :food_group_id => @thisGroup), :method => :create %>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,21 @@
+<div class="panel panel-success panelMove toggle panelClose" id="this">
+    <!-- Start .panel -->
+    <div class="panel-heading">
+        <h4 class="panel-title">Featured Recipe</h4>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4">
+                <% if @thisRecipe.foodPic.present? %>
+                    <%= image_tag @thisRecipe.foodPic.url(:thumb) %>
+                <% else %>
+                    <img src="http://www.fillmurray.com/100/100" />
+                <% end %>
+            </div>
+            <div class="col-xs-12 col-sm-8 pull-left">
+                <h5><%= @thisRecipe.name %></h5>
+                <div><%= @thisRecipe.description %></div>
+            </div>
+        </div>
+    </div>
+</div>

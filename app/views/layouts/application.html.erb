@@ -1,38 +1,73 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title><%= @title || "Chowtime" %></title>
-  <%= favicon_link_tag 'favicon.ico' %>
-  <%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div id="wrap">
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title><%= @title || "Delicious" %></title>
+        <%= favicon_link_tag 'favicon.ico' %>
+        <%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
+        <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+        <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <!-- Start #header -->
+        <div id="header">
+            <div class="container-fluid">
+                <div class="navbar">
+                    <div class="navbar-header" style="width: 210px;">
+                        <% if user_signed_in? %>
+                            <%= link_to inside_path do %>
+                                <%= image_tag("logos/logoTemp_Header.png", style: "margin: 0 auto", class: "hidden-xs") %>
+                            <% end %>
+                        <% else %>
+                            <%= link_to root_path do %>
+                                <%= image_tag("logos/logoTemp_Header.png", style: "margin: 0 auto", class: "hidden-xs") %>
+                            <% end %>
+                        <% end %>
+                    </div>
 
-    <div class="container">
-
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 text-center">
-          <%= render 'layouts/messages' %>
+                    <nav class="top-nav" role="navigation">
+                        <% if user_signed_in? %>
+                        <ul class="nav navbar-nav pull-left">
+                            <%= render 'layouts/top_left_nav' %>
+                        </ul>
+                        <% end %>
+                        <ul class="nav navbar-nav pull-right">
+                            <%= render 'layouts/top_right_nav' %>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-sm-12">
-          <%= yield %>
+        <% if user_signed_in? %>
+        <div id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-panel panel-nav-header dark-bg">
+                    <h4 class="sidebar-panel-title">Navigation</h4>
+                    <a href="#" id="expand-all-submenus" class="expand-submenus tip" title="Expand all sub menus"><i class="en-plus"></i> </a>
+                </div>
+                <ul id="sideNav" class="nav nav-pills nav-stacked">
+                    <%= render 'layouts/side_nav' %>
+                </ul>
+            </div>
         </div>
-      </div>
+        <% end %>
 
-    </div>
-  </div>
-
-  <%= render 'layouts/footer' %>
-
-</body>
+        <div id="content">
+            <div class="content-wrapper">
+                <!--<div class="row">
+                    <div class="col-lg-12 heading">
+                        <h1 class="page-header"><i class="im-screen"></i> Blank page</h1>
+                    </div>
+                </div> -->
+                <div class="outlet">
+                    <div class="row">
+                        <%= yield %>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </body>
 </html>

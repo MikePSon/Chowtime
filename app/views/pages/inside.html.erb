@@ -1,4 +1,15 @@
-<% title("Protected page") %>
-<h1>Protected Page</h1>
-<p>This page is only visible to signed in users. Edit it at: <em>views/pages/inside.html.erb</em></p>
-<p>You can change the page users see after successfully signing in within the method <em>after_sign_in_path_for</em> inside <strong>application_controller.rb</strong></p>
+<% title(@page_header) %>
+<%= render 'layouts/page_header' %>
+
+<div class="row">
+    <!-- Start .row -->
+    <div class="col-xs-12 col-sm-6 sortable-layout">
+    	<% @thisRecipe = @featuredRecipe #Assignment for templating %>
+        <%= render 'widgets/show_recipe', object: @thisRecipe %>
+    </div>
+
+
+    <div class="col-xs-12 col-sm-6 sortable-layout">
+        <%= render 'widgets/shopping_list' %>
+    </div>
+</div>

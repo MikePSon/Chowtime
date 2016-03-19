@@ -1,0 +1,43 @@
+<%= form_for(@kitchen_item, :html => {:class => 'form-horizontal'}) do |f| %>
+  <% if @kitchen_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@kitchen_item.errors.count, "error") %> prohibited this kitchen_item from being saved:</h2>
+
+      <ul>
+      <% @kitchen_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="row">
+    <div class="form-group">
+      <%= f.label :name, :class => "col-xs-12 col-sm-1 control-label" %>
+      <div class="col-xs-12 col-sm-5">
+        <%= f.text_field :name, :class => "form-control", :autofocus => "autofocus", :placeholder => "Recipe Name" %>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="actions" style="margin-top:20px;">
+    <%= f.submit :class => 'btn btn-success' %>
+  </div>
+
+  <div class="field" style="display:none;">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field" style="display:none;">
+    <%= f.label :userHas %><br>
+    <%= f.text_field :userHas %>
+  </div>
+<% end %>
+
+
+<script>
+  $('#kitchen_item_user_id').val(<%= @thisUser %>);
+</script>

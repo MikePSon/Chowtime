@@ -1,0 +1,21 @@
+<% @thisArray.each do |thisItem| %>
+<% thisGroup = @categories.where(:id => thisItem.food_group_id).first %>
+<% colorArray = ["dark","brown","danger","purple","primary","success","default"] %>
+<% thisColor = colorArray[thisGroup.id] %>
+  
+<div class="col-xs-6 col-sm-2 mix <% thisGroup = @categories.where(:id => thisItem.food_group_id).first %><%= thisGroup.groupName.downcase %>">
+  <div class="panel panel-<%= thisColor %>">
+    <!-- Start .panel -->
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <%= thisGroup.groupName %>
+      </h4>
+    </div>
+    <div class="panel-body">
+      <%= thisItem.name %>
+    </div>
+  </div>
+  <!-- End .panel -->
+</div>
+
+<% end %>

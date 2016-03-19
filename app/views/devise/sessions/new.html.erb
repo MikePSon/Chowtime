@@ -1,49 +1,85 @@
-<div class="row">
-  <div class="col-sm-6 ">
-    <h1>Sign in</h1>
+<style>
+.left-icon {
+    padding-left: 32px;
+    position: relative;
+}
 
-    <%= form_for(resource, :as => resource_name,
+.left-input-icon {
+    position: relative;
+    top: -27px;
+    left: 10px;
+}
+</style>
+
+
+<!-- Start #login -->
+<%= form_for(resource, :as => resource_name,
     :url => session_path(resource_name),
     role: "form") do |f| %>
 
-    <div class="form-group">
-      <%= f.label :email %>
-      <div class="row">
-        <div class="col-sm-6">
-          <%= f.text_field :email, :autofocus => true, class: "form-control" %>
+<div id="login" class="animated bounceIn">
+    <%= image_tag("logos/logoTemp.png", style: "margin: 0 auto") %>
+    <!-- Start .login-wrapper -->
+    <div class="login-wrapper">
+        <ul id="myTab" class="nav nav-tabs nav-justified bn">
+            <li class="active">
+                <a href="#log-in" data-toggle="tab">Login</a>
+            </li>
+        </ul>
+        <div id="myTabContent" class="tab-content bn">
+            <div class="tab-pane fade active in" id="log-in">
+                <div class="social-buttons text-center mt10">
+                    <a href="#" class="disabled btn btn-primary btn-alt btn-round btn-lg mr10"><i class="fa-facebook s24"></i></a>
+                    <a href="#" class="disabled btn btn-primary btn-alt btn-round btn-lg mr10"><i class="fa-twitter s24"></i></a>
+                    <a href="#" class="disabled btn btn-danger btn-alt btn-round btn-lg mr10"><i class="fa-google-plus s24"></i></a>
+                    <a href="#" class="disabled btn btn-info btn-alt btn-round btn-lg"><i class="fa-linkedin s24"></i></a>
+                </div>
+                <div class="seperator">
+                    <strong>or</strong>
+                    <hr>
+                </div>
+                <form class="form-horizontal mt10" action="index.html" id="login-form" role="form">
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <%= f.text_field :email, :autofocus => true, class: "form-control left-icon", :placeholder => "Email Address" %>
+                            <i class="ec-user s16 left-input-icon"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <%= f.password_field :password, class: "form-control left-icon", :placeholder => "Your password" %>
+                            <i class="ec-locked s16 left-input-icon"></i>
+                            <span class="help-block"><a href="#"><small>Forgot password?</small></a></span> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-8">
+                            <!-- col-lg-12 start here -->
+                            <label class="checkbox">
+                                <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+                            </label>
+                        </div>
+                        <!-- col-lg-12 end here -->
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4">
+                            <!-- col-lg-12 start here -->
+                            <%= f.submit "Login", class: "btn btn-success pull-right" %>
+                        </div>
+                        <!-- col-lg-12 end here -->
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
     </div>
-
-    <div class="form-group">
-      <%= f.label :password %>
-      <div class="row">
-        <div class="col-sm-6">
-          <%= f.password_field :password, class: "form-control" %>
-        </div>
-      </div>
-    </div>
-
-
-
-    <% if devise_mapping.rememberable? -%>
-    <div class="form-group">
-      <div class="row">
-        <div class="col-sm-6">
-          <%= f.check_box :remember_me %> <%= f.label :remember_me %>
-        </div>
-      </div>
-    </div>
-    <% end -%>
-
-    <div class="row">
-      <div class="col-sm-6">
-        <%= f.submit "Sign in", class: "btn btn-primary" %>
-      </div>
-    </div>
-    <% end %>
-
-    <%= render "devise/shared/links" %>
-
-  </div>
+    <!-- End #.login-wrapper -->
 </div>
+<!-- End #login -->
+<% end %>
+
+<script>
+  $('body').addClass("login-page");
+  $('#content').css("margin-left","0");
+  $('#login').css("margin","1% auto 0 auto");
+</script>
+
+<%= javascript_include_tag "plugins/forms/icheck/jquery.icheck" %>
+<%= javascript_include_tag "pages/login" %>

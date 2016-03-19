@@ -1,0 +1,31 @@
+<%= render 'layouts/page_header' %>
+
+<div class="row">
+  <!-- Start .row -->
+  <div class="col-xs-12 col-sm-6 sortable-layout">
+
+
+    <% @thisRecipe = @randomRecipe #Assignment for templating %>
+    <%= render 'widgets/show_recipe', object: @thisRecipe %>
+    <!-- End Widget -->
+
+    <% if @myIngredients.count > 0 %>
+      <% @thisArray = @youGotThis #Assignment for templating %>
+      <%= render 'widgets/shopping_recipe', object: @thisArray, title: "You can make these" %>
+    <% end %>
+    <!-- End Widget -->
+
+
+  </div>
+
+
+  <div class="col-xs-12 col-sm-6 sortable-layout">
+
+
+    <% @thisArray = @needToShop #Assignment for templating %>
+    <%= render 'widgets/shopping_recipe', object: @thisArray, title: "You'll need to Shop" %>
+    <!-- End Widget -->
+  
+
+  </div>
+</div>

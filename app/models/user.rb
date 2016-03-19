@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :recipes
+  has_many :kitchen_items, dependent: :destroy
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

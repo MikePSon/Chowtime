@@ -9,6 +9,24 @@
     <%= devise_error_messages! %>
 
     <div class="form-group">
+      <%= f.label :fname, "First Name" %>
+      <div class="row">
+        <div class="col-sm-6">
+          <%= f.text_field :fname, :autofocus => true, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :lname, "Last Name" %>
+      <div class="row">
+        <div class="col-sm-6">
+          <%= f.text_field :lname, :autofocus => true, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
       <%= f.label :email %>
       <div class="row">
         <div class="col-sm-6">

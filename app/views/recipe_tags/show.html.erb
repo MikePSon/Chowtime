@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @recipe_tag.name %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @recipe_tag.icon %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @recipe_tag.category_id %>
+</p>
+
+<%= link_to 'Edit', edit_recipe_tag_path(@recipe_tag) %> |
+<%= link_to 'Back', recipe_tags_path %>

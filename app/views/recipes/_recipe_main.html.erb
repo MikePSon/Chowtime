@@ -1,0 +1,30 @@
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+  <div class="row" id="image_container">
+    <% if @recipe.foodPic.present? %>
+      <%= image_tag @thisRecipe.foodPic.url(:medium) %>
+    <% else %>
+      <img src="http://www.fillmurray.com/300/300" />
+    <% end %>
+  </div>
+
+</div>
+<div class="col-lg-9 col-md-9 col-sm-6 col-xs-12">
+  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-right">
+    <h5>Ingredients</h5>
+    <ol>
+      <% @ingredients.each do |thisIngredient| %>
+        <li><%= thisIngredient.name %></li>
+      <% end %>
+    </ol>
+  </div>
+  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+    <h5>Steps</h5>
+    <% if @steps.count > 0 %>
+      <ol>
+        <% @steps.each do |thisStep| %>
+          <li><%= thisStep.step %></li>
+        <% end %>
+      </ol>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+
+
+<% if !user_signed_in? %>
+<li><%= link_to "Sign in", new_user_session_path %></li>
+<li><%= link_to "Sign up", new_user_registration_path %></li>
+<% else %>
+
+<li class="dropdown">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+		<%= current_user.fname %> <%= current_user.lname[0] %>.<span class="caret"></span>
+	</a>
+
+	<ul class="dropdown-menu right">
+		<li>
+			<%= link_to edit_user_registration_path do %>
+    			<i class="st-settings"></i>Your Account
+    		<% end %>
+		</li>
+		<li role="separator" class="divider"></li>
+		<li>
+			<%= link_to destroy_user_session_path, data:{method: :delete} do %>
+    			<i class="im-exit"></i>Sign out
+    		<% end %>
+		</li>
+
+		<% if current_user.admin? %>
+		<li role="separator" class="divider"></li>
+		<li>
+			<%= link_to admin_root_path do %>
+    			<i class="im-key2"></i>Admin
+    		<% end %>
+		</li>
+		<% end %>
+	</ul>
+</li>
+
+<% end %>

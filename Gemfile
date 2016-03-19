@@ -60,3 +60,19 @@ end
 group :production do
   gem 'unicorn'
 end
+
+
+gem 'sprockets-rails', '2.3.3'
+# Cocoon for nested forms
+gem 'cocoon'
+
+# File Uploads
+gem 'paperclip'
+gem 'aws-sdk', '< 2.0'
+
+# Testing
+gem 'rspec-rails', '~> 2.0'
+gem 'cucumber-rails', require: false
+gem 'database_cleaner'
+gem 'factory_girl_rails'
+gem 'selenium-webdriver'

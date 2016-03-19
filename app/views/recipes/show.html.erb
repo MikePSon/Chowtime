@@ -1,0 +1,24 @@
+<%= render 'layouts/page_header' %>
+<style>
+  #recipe_container #image_container img 
+    { padding: 0 15px; }
+
+  #recipe_container #stats_container 
+    { margin-top: 10px; }
+</style>
+
+<h5 style="margin-top: 0;"><%= @recipe.description %></h5>
+
+<div class="row" id="quick_stats">
+  <%= render 'recipes/recipe_quick_stats' %>
+</div>
+
+<div class="row" id="recipe_container">
+  <%= render 'recipes/recipe_main' %>
+</div>
+
+<% if !@canCook %>
+	<div class="row" id="add_to_cart">
+  		<%= render 'widgets/show_recipe_add2cart' %>
+	</div>
+<% end %>

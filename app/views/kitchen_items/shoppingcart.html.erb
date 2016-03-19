@@ -1,0 +1,44 @@
+<%= render 'layouts/page_header' %>
+
+<%= stylesheet_link_tag "plugins", "data-turbolinks-track" => true %>
+
+<% if !@yourcart.empty? %>
+<div class="outlet hidden-xs">
+<div class="row">
+  <div class="gallery">
+    <!-- start .gallery -->
+    <div class="gallery-toolbar">
+      <div class="col-lg-12">
+        <button class="filter btn btn-primary btn-alt mr5" data-filter="all">All</button>
+        <% @categories.each do |thisCategory| %>
+          <button class="filter btn btn-primary btn-alt mr5" data-filter=".<%= thisCategory.groupName.downcase %>"><%= thisCategory.groupName %></button>
+        <% end %>
+      </div>
+    </div>
+    <div class="gallery-inner">
+      <% @thisArray = @yourcart #Assignment for templating %>
+      <%= render 'widgets/items_ingredients_tab', object: @thisArray %>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="visible-xs">
+  <h4>XS View</h4>
+</div>
+
+<% else %>
+  <h4>Your shopping cart is empty</h4>
+<% end %>
+
+<br>
+
+
+<%= javascript_include_tag "plugins/misc/gallery/jquery.magnific-popup.min", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "plugins/misc/mixitup/jquery.mixitup.min", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "pages/gallery", "data-turbolinks-track" => true %>
+<script>
+  var newButton = $('#newRecipe');
+  $('.actionItems h1').append(newButton);
+  newButton.slideDown();
+</script>

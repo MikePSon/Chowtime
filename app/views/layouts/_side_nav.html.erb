@@ -1,0 +1,38 @@
+<li>
+    <%= link_to inside_path do %>
+    	Dashboard <i class="im-dashboard"></i>
+    <% end %>
+</li>
+<li>
+    <%= link_to myIndex_path do %>
+    	My Recipes <i class="fd-healthyfood"></i>
+    <% end %>
+</li>
+<li>
+    <%= link_to myKitchen_path do %>
+        My Kitchen <i class="fd-fork42"></i>
+    <% end %>
+</li>
+<li>
+    <%= link_to getInspired_path do %>
+        Get Inspired <i class="fa-exclamation-sign"></i>
+    <% end %>
+</li>
+<li>
+    <%= link_to shoppingcart_path do %>
+        Shopping Cart <i class="im-cart3"></i>
+    <% end %>
+</li>
+<!--<li>
+    <%= link_to recipes_path do %>
+    	Browse Recipes <i class="en-pictures"></i>
+    <% end %>
+</li>-->
+
+<% if current_user.admin? %>
+<li>
+    <%= link_to styleguide_path('styleGuide_Index') do %>
+    	Style Guide <i class="ec-pictures"></i>
+    <% end %>
+</li>
+<% end %>

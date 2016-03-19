@@ -7,7 +7,16 @@ class PagesController < ApplicationController
   end
 
   def inside
+    @page_icon   = "im-dashboard"
+    @page_header = "Dashboard"
+
+    # Get random record, optimize?
+    @offset = rand(Recipe.count)
+    @featuredRecipe = Recipe.offset(@offset).first
   end
   
+  def styleguide
+    render template: "pages/styleguide/#{params[:page]}"
+  end
   
 end

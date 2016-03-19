@@ -1,0 +1,44 @@
+<div class="panel panel-default panelMove toggle panelClose">
+  <!-- Start .panel -->
+  <div class="panel-heading">
+      <h4 class="panel-title">
+        <%= title %>
+      </h4>
+      <div class="panel-heading-content">
+          <span class="badge badge-dark"><%= @thisArray.count %></span>
+      </div>
+  </div>
+  <div class="panel-body">
+      <div class="row">
+          <div class="col-xs-12">
+            <table class="table table-condensed">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Ingredients</th>
+                  <th style="text-align: right">Actions</th>
+                </tr>
+              </thead>
+            
+              <tbody>
+                <% @thisArray.each do |recipe| %>
+                  <tr>
+                    <td><%= recipe.name %></td>
+                    <td>
+                      <% recipe.ingredients.each do |thisIng| %>
+                            <%= thisIng.name %>, 
+                          <% end %>
+                    </td>
+                    <td style="text-align: right">
+                      <%= link_to recipe do %>
+                        <i class="ec-search"></i>
+                      <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+      </div>
+  </div>
+</div>
