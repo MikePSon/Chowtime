@@ -2,28 +2,28 @@
 # Initial seed file to use with Devise User Model
 
 # Temporary admin account
-u = User.new(
-   email: "admin@example.com",
-   fname: "Mikey",
-   lname: "Admin",
-   password: "1234",
-   admin: true
-)
-u.skip_confirmation!
-u.save!
+#u = User.new(
+#   email: "admin@example.com",
+#   fname: "Mikey",
+#   lname: "Admin",
+#   password: "1234",
+#   admin: true
+#)
+#u.skip_confirmation!
+#u.save!
 
 # Test user accounts
-(1..3).each do |i|
- u = User.new(
-     email: "user#{i}@example.com",
-     fname: "user#{i}",
-     lname: "TestAcct",
-     password: "1234"
- )
- u.skip_confirmation!
- u.save
- puts "#{i} test users created..." if (i % 5 == 0)
-end
+#(1..3).each do |i|
+# u = User.new(
+#     email: "user#{i}@example.com",
+#     fname: "user#{i}",
+#     lname: "TestAcct",
+#     password: "1234"
+# )
+# u.skip_confirmation!
+# u.save
+# puts "#{i} test users created..." if (i % 5 == 0)
+#end
 
 # Test Recipes
 (1..25).each do |i|
