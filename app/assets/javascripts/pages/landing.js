@@ -9,6 +9,7 @@ $(document).ready(function() {
 	    event.preventDefault();
 	    });
 	});
+	console.log(" ");
 
 	//Animate logos
 	$('.logos').waypoint({
