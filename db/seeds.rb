@@ -51,7 +51,7 @@ FoodGroup.create(groupName:"Other", icon: "im-dice")
     name: "ingredient#{i}",
     amount: "#{i} cups",
     food_group_id: rand(1..6),
-    recipe_id: (i/2).round
+    recipe_id: (i/2).ceil
   )
   i.save!
 end
