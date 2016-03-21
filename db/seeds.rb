@@ -28,7 +28,7 @@ end
 # Test Recipes
 (1..25).each do |i|
   r = Recipe.new(
-      user_id: rand(1),
+      user_id: rand(1..4),
       name: "recipe#{i}",
       description: "Test recipe #{i} description",
       calories_value: "1234",
