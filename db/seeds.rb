@@ -1,19 +1,8 @@
-#Test Ingredients
-(1..49).each do |i|
-  i = Ingredient.new(
-    name: "ingredient#{i}",
-    amount: "#{i} cups",
-    food_group_id: rand(1..6),
-    recipe_id: ((i+1)/2).round
-  )
-  i.save!
-end
-
 #Test Kitchen Items
 (1..50).each do |i|
   ki = KitchenItem.new(
     name: "ingredient#{i}",
-    user_id: rand(4),
+    user_id: rand(1..4),
     food_group_id: rand(1..6),
     userHas: false
   )
