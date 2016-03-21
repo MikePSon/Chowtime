@@ -45,38 +45,6 @@ FoodGroup.create(groupName:"Fruit", icon: "im-dice")
 FoodGroup.create(groupName:"Vegetable", icon: "im-dice")
 FoodGroup.create(groupName:"Other", icon: "im-dice")
 
-#Test Ingredients
-(1..50).each do |i|
-  i = Ingredient.new(
-    name: "ingredient#{i}",
-    amount: "#{i} cups",
-    food_group_id: rand(1..6),
-    recipe_id: (i/2).round
-  )
-  i.save!
-end
-
-#Test Kitchen Items
-(1..50).each do |i|
-  ki = KitchenItem.new(
-    name: "ingredient#{i}",
-    user_id: rand(4),
-    food_group_id: rand(1..6),
-    userHas: false
-  )
-  ki.save!
-end
-
-#Steps
-(1..25).each do |i|
-  s = Step.new(
-    step: "Step #{i}",
-    recipe_id: rand(4)
-  )
-  s.save!
-end
-
-
 RecipeTag.create(name:"4th of July", icon: "im-dice")
 RecipeTag.create(name:"African", icon: "im-dice")
 RecipeTag.create(name:"American", icon: "im-dice")
@@ -137,3 +105,34 @@ RecipeTag.create(name:"Valentine's", icon: "im-dice")
 RecipeTag.create(name:"Vegan", icon: "im-dice")
 RecipeTag.create(name:"Vegetarian", icon: "im-dice")
 RecipeTag.create(name:"Winter", icon: "im-dice")
+
+#Test Ingredients
+(1..49).each do |i|
+  i = Ingredient.new(
+    name: "ingredient#{i}",
+    amount: "#{i} cups",
+    food_group_id: rand(1..6),
+    recipe_id: ((i+1)/2).round
+  )
+  i.save!
+end
+
+#Test Kitchen Items
+(1..50).each do |i|
+  ki = KitchenItem.new(
+    name: "ingredient#{i}",
+    user_id: rand(1..4),
+    food_group_id: rand(1..6),
+    userHas: false
+  )
+  ki.save!
+end
+
+#Steps
+(1..25).each do |i|
+  s = Step.new(
+    step: "Step #{i}",
+    recipe_id: rand(1..4)
+  )
+  s.save!
+end

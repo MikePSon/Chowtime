@@ -1,2 +1,203 @@
-<% title("Home Page") %>
-<i class="fa fa-home"></i> Home Page <small>views/pages/home.html.erb</small>
+<%= stylesheet_link_tag "landing", media: "all", "data-turbolinks-track" => true %>
+<style>
+	#content {margin-left:0px !important;padding:50px 0 0 !important;}
+</style>
+
+
+<!-- Start .landing-intro -->
+<div id="top" class="landing-intro" role="main">
+    <!-- Start .container -->
+    <div class="container">
+        <!-- Start intro-slogan -->
+        <div class="intro-slogan text-center animated fadeInDown">
+            <h1>Get <strong>inspired</strong>
+            </h1>
+            <p>
+                Delicious recipes 
+                <br class="hidden-xs">Easy to use. Get started today.
+            </p>
+            <%= image_tag("sprFlat/landing/sprflat.png", class: "img-responsive center-block center-block") %>
+        </div>
+        <!-- End intro-slogan -->
+    </div>
+    <!-- End .container -->
+    <!-- Start .description-bar -->
+    <div class="description-bar">
+        <!-- Start container -->
+        <div class="container text-center">
+            <p>Perfect Solution for for cooks of all levels. Plan your meals, save money, eat healthy.</p>
+        </div>
+        <!-- End container -->
+    </div>
+    <!-- End description-bar -->
+    <!-- Scroll to next section -->
+    <a href="#build-with-love" class="scrollTo">
+        <p class="sroll-down">
+            <%= image_tag("sprFlat/landing/scroll_down.png") %>
+        </p>
+    </a>
+</div>
+<!-- End .landing-intro -->
+<!-- Start section-features -->
+<div id="features" class="section-features">
+
+    <!-- Start clean-code section -->
+    <section id="clean-code" class="clean-code features-row">
+        <div class="container">
+            <div class="text-center">
+                <h3 class="section-header-1">What do you need to get your project,
+                    <br class="hidden-sm hidden-xs">up and running fast?</h3>
+            </div>
+            <div class="row">
+                <!-- Start .row -->
+                <div class="col-md-8 col-sm-8">
+                    <%= image_tag("sprFlat/landing/features/cleancode.png", class: "img-responsive center-block") %>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <h3 class="section-header">Inspired Eating</h3>
+                    <p>Bacon ipsum dolor amet hamburger jowl frankfurter, sausage chuck filet mignon fatback tenderloin cupim pork belly brisket.</p>
+                    <p> Turkey shoulder cow, ham pork belly hamburger prosciutto jerky andouille venison.</p>
+                    <p>Turkey ham meatloaf turducken doner pastrami, corned beef salami beef rump prosciutto.</p>
+                </div>
+            </div>
+            <!-- End .row -->
+        </div>
+    </section>
+    <!-- End clean-code section -->
+    <!-- Start charts section -->
+    <section id="charts" class="charts gray-bg features-row">
+        <div class="container">
+            <div class="row">
+                <!-- Start .row -->
+                <div class="col-md-4 col-sm-4">
+                    <h3 class="section-header">Awesome Tracking</h3>
+                    <p>Bacon ipsum dolor amet hamburger jowl frankfurter, sausage chuck filet mignon fatback tenderloin cupim pork belly brisket.</p>
+                    <p> Turkey shoulder cow, ham pork belly hamburger prosciutto jerky andouille venison.</p>
+                    <p>Turkey ham meatloaf turducken doner pastrami, corned beef salami beef rump prosciutto.</p>
+                </div>
+                <div class="col-md-8 col-sm-8">
+                    <%= image_tag("sprFlat/landing/features/charts.png", class: "img-responsive center-block") %>
+                </div>
+            </div>
+            <!-- End .row -->
+        </div>
+    </section>
+    <!-- End charts section -->
+    <!-- Start clean-code section -->
+    <section id="email-app" class="email-app features-row">
+        <div class="container">
+            <div class="row">
+                <!-- Start .row -->
+                <div class="col-md-8 col-sm-8">
+                    <%= image_tag("sprFlat/landing/features/email.png", class: "img-responsive center-block") %>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <h3 class="section-header">Built for you</h3>
+                    <p>Bacon ipsum dolor amet hamburger jowl frankfurter, sausage chuck filet mignon fatback tenderloin cupim pork belly brisket.</p>
+                    <p> Turkey shoulder cow, ham pork belly hamburger prosciutto jerky andouille venison.</p>
+                    <p>Turkey ham meatloaf turducken doner pastrami, corned beef salami beef rump prosciutto.</p>
+                </div>
+            </div>
+            <!-- End .row -->
+        </div>
+    </section>
+    <!-- End clean-code section -->
+</div>
+<!-- End section-features -->
+<!-- Start testimonials -->
+<div id="testimonials" class="testimonials gray-bg">
+    <div class="container">
+        <div class="text-center">
+            <h3 class="section-header-1">What our customers said</h3>
+        </div>
+        <div class="row">
+            <!-- Start .row -->
+            <div class="col-md-6">
+                <!-- Start testimonials block -->
+                <div class="testimonials-block">
+                    <div class="testimonials-text">One of the best admin template ever. The number of customization options is pretty damn high</div>
+                    <div class="testimonials-client">
+                        <%= image_tag("sprFlat/avatars/131") %>
+                        <p>
+                            <strong>Tina Dowsen</strong> 
+                            <br>CEO of <a href="#">Dowsen Inc</a>
+                        </p>
+                    </div>
+                </div>
+                <!-- End testimonials block -->
+            </div>
+            <div class="col-md-6">
+                <!-- Start testimonials block -->
+                <div class="testimonials-block">
+                    <div class="testimonials-text">Simply awesome. I managed to integrate this template in my system for one week. Very good job. Recommend it.</div>
+                    <div class="testimonials-client">
+                        <%= image_tag("sprFlat/avatars/130") %>
+                        <p>
+                            <strong>Felix Jones</strong> 
+                            <br>Founder of <a href="#">Startapp</a>
+                        </p>
+                    </div>
+                </div>
+                <!-- End testimonials block -->
+            </div>
+            <!-- Scroll to next section -->
+            <div class="col-md-12 pt25 pb25 mt25">
+                <a href="#give-a-try" class="scrollTo">
+                    <p class="sroll-down">
+                        <%= image_tag("sprFlat/landing/scroll_down") %>
+                    </p>
+                </a>
+            </div>
+        </div>
+        <!-- End .row -->
+    </div>
+</div>
+<!-- End testimonials -->
+<!-- Start give-a-try -->
+<div id="give-a-try" class="give-a-try">
+    <div class="container">
+        <div class="text-center">
+            <h1>Have You Seen Enough?</h1>
+            <p>Give it a <strong>try</strong>. It’s time to get your project <strong>done</strong>
+            </p>
+        </div>
+        <div class="row mt50 mb50">
+            <!-- Start .row -->
+            <div class="col-md-12 text-center">
+                <a href="https://wrapbootstrap.com/theme/sprflat-responsive-admin-template-WB098M36S?ref=jorolino" class="btn btn-lg btn-danger uppercase" target="_blank"> Purchase</a>
+            </div>
+        </div>
+        <!-- End .row -->
+        <div class="text-center">
+            <p>Not convinced yet ? Explore demo.</p>
+        </div>
+        <div class="row mt50 mb50">
+            <!-- Start .row -->
+            <div class="col-md-12 text-center">
+                <a href="#" class="btn btn-lg btn-danger uppercase"> Demo</a>
+            </div>
+        </div>
+        <!-- End .row -->
+    </div>
+</div>
+<!-- End give-a-try -->
+<!-- Start Footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="row mt50 mb50">
+            <!-- Start .row -->
+            <div class="col-md-12 footer-links">
+                <a href="#features" class="goTo">Features</a> 
+                <a href="#testimonials" class="goTo">Testomonials</a> 
+                <a href="https://wrapbootstrap.com/theme/sprflat-responsive-admin-template-WB098M36S?ref=jorolino" target="_blank">Purchase</a> 
+                <a href="http://themes.suggelab.com/?product=sprflat" target="_blank">Demo</a>
+                <a href="#top" class="back-to-top">Back to Top</a>
+            </div>
+        </div>
+        <!-- End .row -->
+    </div>
+</footer>
+<!-- End footer -->
+
+<%= javascript_include_tag "plugins/ui/waypoint/waypoints", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "pages/landing", "data-turbolinks-track" => true %>

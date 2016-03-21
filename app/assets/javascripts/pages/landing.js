@@ -1,5 +1,5 @@
 //------------- landing.js -------------//
-$(document).onload=function() {
+$(document).ready(function() {
 	$(function() {
 	    $('.scrollTo, .back-to-top, .goTo').bind('click',function(event){
 			var $anchor = $(this);
