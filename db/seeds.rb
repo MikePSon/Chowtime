@@ -4,7 +4,7 @@
     name: "ingredient#{i}",
     amount: "#{i} cups",
     food_group_id: rand(1..6),
-    recipe_id: (i/2).ceil
+    recipe_id: (i+1/2).ceil
   )
   i.save!
 end
