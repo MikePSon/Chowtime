@@ -71,7 +71,7 @@ end
 (1..25).each do |i|
   s = Step.new(
     step: "Step #{i}",
-    recipe_id: rand(4)
+    recipe_id: rand(1..4)
   )
   s.save!
 end
