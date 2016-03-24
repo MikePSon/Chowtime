@@ -2,6 +2,8 @@
   <div class="row" id="image_container">
     <% if @recipe.foodPic.present? %>
       <%= image_tag @thisRecipe.foodPic.url(:medium) %>
+    <% elsif @recipe.imported_img.present? %>
+      <img src="<%= @recipe.imported_img %>" style="height: 300px; width: 300px"/>
     <% else %>
       <img src="http://www.fillmurray.com/300/300" />
     <% end %>
