@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 20160319171939) do
     t.float    "sugar_percent"
     t.float    "fiber_value"
     t.float    "fiber_percent"
+    t.text     "imported_steps"
     t.string   "imported_img"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
