@@ -4,8 +4,13 @@
           <i class="fd-cutlery25 s64"></i>
       </div>
       <div class="tile-content">
+        <% if @recipe.serves.present? %>
           <div class="number"><%= @recipe.serves %></div>
           <h3>Serves</h3>
+        <% else %>
+          <div class="number"><%= @recipe.prep_hours %> : <%= @recipe.prep_minutes %></div>
+          <h3>Prep Time</h3>
+        <% end %>
       </div>
   </div>
 </div>
@@ -30,7 +35,13 @@
           <i class="ec-download s64"></i>
       </div>
       <div class="tile-content">
-          <div class="number"><%= @recipe.cook_time %></div>
+          <div class="number">
+            <% if @recipe.cook_time.present? %>
+              <%= @recipe.cook_time %>
+            <% else %>
+              <%= @recipe.cook_hours %> : <%= @recipe.cook_minutes %>
+            <% end %>
+          </div>
           <h3>Cook Time</h3>
       </div>
   </div>

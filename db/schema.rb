@@ -84,6 +84,10 @@ ActiveRecord::Schema.define(version: 20160319171939) do
     t.integer  "serves"
     t.time     "cook_time"
     t.time     "prep_time"
+    t.integer  "prep_hours"
+    t.integer  "prep_minutes"
+    t.integer  "cook_hours"
+    t.integer  "cook_minutes"
     t.integer  "difficulty"
     t.float    "calories_value"
     t.float    "calories_percent"
@@ -99,6 +103,8 @@ ActiveRecord::Schema.define(version: 20160319171939) do
     t.float    "sugar_percent"
     t.float    "fiber_value"
     t.float    "fiber_percent"
+    t.text     "imported_steps"
+    t.string   "imported_img"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.string   "foodPic_file_name"

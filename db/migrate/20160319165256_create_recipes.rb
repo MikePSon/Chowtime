@@ -9,6 +9,13 @@ class CreateRecipes < ActiveRecord::Migration
 	  t.integer :serves
 	  t.time :cook_time
 	  t.time :prep_time
+
+	  t.integer :prep_hours
+	  t.integer :prep_minutes
+	  t.integer :cook_hours
+	  t.integer :cook_minutes
+
+
 	  t.integer :difficulty
 	  t.float :calories_value
 	  t.float :calories_percent
@@ -24,6 +31,8 @@ class CreateRecipes < ActiveRecord::Migration
 	  t.float :sugar_percent
 	  t.float :fiber_value
 	  t.float :fiber_percent
+
+	  t.string :imported_img
 
       t.timestamps null: false
     end
