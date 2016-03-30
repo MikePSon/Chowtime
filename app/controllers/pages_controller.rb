@@ -10,6 +10,8 @@ class PagesController < ApplicationController
     @page_icon   = "im-dashboard"
     @page_header = "Dashboard"
 
+    @colors = ["red", "blue", "green", "teal", "orange", "gray-spr", "purple", "pink", "lime", "magenta", "brown", "dark"]
+
     # Get random record, optimize?
     @offset = rand(Recipe.count)
     @featuredRecipe = Recipe.offset(@offset).first

@@ -829,7 +829,7 @@ body {
 		overflow: hidden;
 	}
 	&.login-page {
-		background: $color_seagull_approx;
+		
 		#login {
 			margin: 10% auto 0 auto;
 			position: relative;
@@ -847,8 +847,7 @@ body {
 				//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
 				border-radius: 4px;
 				display: inline-block;
-				//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-				box-shadow: 0 1px 1px $black_10;
+
 				#user-info {
 					position: relative;
 					height: 156px;
@@ -1196,6 +1195,7 @@ body {
 							&:hover {
 								background: $color_wild_sand_approx;
 								color: $color_comet_approx;
+								cursor: pointer;
 								i {
 									color: $color_seagull_approx;
 								}
@@ -3592,7 +3592,7 @@ pre {
 		top: 100px;
 	}
 	#content {
-		padding-top: 100px;
+		/*padding-top: 100px;*/
 	}
 	.form-wizard {
 		&.wizard-vertical {
@@ -3660,7 +3660,7 @@ pre {
 		text-align: center;
 	}
 	#header .navbar .top-nav {
-		height: 100px;
+		/*height: 100px;*/
 		text-align: center;
 		float: none;
 		.navbar-nav {
