@@ -15,6 +15,10 @@ class PagesController < ApplicationController
     # Get random record, optimize?
     @offset = rand(Recipe.count)
     @featuredRecipe = Recipe.offset(@offset).first
+
+    @categories = FoodGroup.all
+    @myCart = KitchenItem.where(:user_id => current_user.id).where(:userHas => false)[1..7]
+    @myCartLength = KitchenItem.where(:user_id => current_user.id).where(:userHas => false).count
   end
   
   def styleguide
