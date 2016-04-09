@@ -1,25 +1,48 @@
-<div class="panel panel-success panelMove toggle panelClose" id="this">
+<div class="weather-widget panel panel-primary panelMove">
     <!-- Start .panel -->
     <div class="panel-heading">
-        <h4 class="panel-title">Featured Recipe</h4>
+        <h4 class="panel-title"><i class="fd-healthyfood"></i> <%= @thisRecipe.name %></h4>
+        <div class="pull-right mt10">
+            <a href="#" class="color-grayspr"><%= @thisRecipe.user.fname %> <%= @thisRecipe.user.lname[0] %>.</a> 
+        </div>
     </div>
-    <div class="panel-body">
-        <%= link_to @thisRecipe do %>
-            <div class="row">
-                <div class="col-xs-12 col-sm-4">
-                    <% if @thisRecipe.foodPic.present? %>
-                        <%= image_tag @thisRecipe.foodPic.url(:thumb) %>
-                    <% elsif @thisRecipe.imported_img.present? %>
-                        <img src="<%= @thisRecipe.imported_img %>" style="height: 100px; width: 100px"/>
-                    <% else %>
-                        <img src="http://www.fillmurray.com/100/100" />
-                    <% end %>
-                </div>
-                <div class="col-xs-12 col-sm-8 pull-left">
-                    <h5 class="text-muted"><%= @thisRecipe.name %></h5>
-                    <div class="text-muted"><%= @thisRecipe.description.truncate(250) %></div>
-                </div>
-            </div>
+    <%= link_to @thisRecipe do %>
+
+    <div class="panel-body blue-bg text-center" style="border-radius: 0px">
+        <% if @thisRecipe.foodPic.present? %>
+            <%= image_tag @thisRecipe.foodPic.url(:display) %>
+        <% elsif @thisRecipe.imported_img.present? %>
+            <img src="<%= @thisRecipe.imported_img %>" style="height: 100px; width: 100px" class="img-responsive"/>
+        <% else %>
+            <img src="http://www.fillmurray.com/1200/800" class="img-responsive" />
         <% end %>
+    </div>
+
+    <% end %>
+    <div class="panel-footer white-bg text-center">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <!-- col-lg-3 start here -->
+            <p class="weather-day">Serves</p>
+            <p class="weather-degree"><%= @thisRecipe.serves %></p>
+        </div>
+        <!-- col-lg-3 end here -->
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <!-- col-lg-3 start here -->
+            <p class="weather-day">Calories</p>
+            <p class="weather-degree"><%= @thisRecipe.calories_value %></p>
+        </div>
+        <!-- col-lg-3 end here -->
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <!-- col-lg-3 start here -->
+            <p class="weather-day">Prep</p>
+            <p class="weather-degree">0:15</p>
+        </div>
+        <!-- col-lg-3 end here -->
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <!-- col-lg-3 start here -->
+            <p class="weather-day">Cook</p>
+            <p class="weather-degree">1:00</p>
+        </div>
+        <!-- col-lg-3 end here -->
     </div>
 </div>
