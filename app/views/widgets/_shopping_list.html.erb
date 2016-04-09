@@ -24,10 +24,10 @@
                         <% thisColor = colorArray[thisGroup.id] %>
                     
                         <li class="todo-task-item">
-                            <label class="checkbox">
+                            <!--<label class="checkbox">
                                 <input type="checkbox">
                             </label>
-                            <!--<div class="todo-priority normal tip" title="Normal priority">
+                            <div class="todo-priority normal tip" title="Normal priority">
                                 <i class="im-radio-checked"></i>
                             </div>-->
                             <% thisGroup = @categories.where(:id => thisItem.food_group_id).first %>
