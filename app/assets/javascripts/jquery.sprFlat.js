@@ -970,17 +970,8 @@
 
                 // reset panel position for page
                 $('#clear-localstorage').click(function(e) {
-                    console.log("clear-localstorage clicked!");
-                    bootbox.confirm({
-                        message: "Warning!!! This action will reset panels position",
-                        title: "Are you sure ?",
-                        callback: function(result) {
-                            if (result) {
-                                localStorage.removeItem(panelsPosition);
-                                location.reload(); 
-                            }
-                        }
-                    });                    
+                    localStorage.removeItem(panelsPosition);
+                    location.reload();                    
                 });
 
                 panelSavePosition = function (item) {

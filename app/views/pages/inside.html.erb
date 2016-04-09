@@ -1,6 +1,11 @@
 <% title(@page_header) %>
 <%= render 'layouts/page_header' %>
 
+
+<div class="row" id="stats_tiles_container">
+	<%= render 'dashboard_widgets' %>
+</div>
+
 <div class="row">
     <!-- Start .row -->
     <div class="col-xs-12 col-sm-6 sortable-layout">
@@ -10,6 +15,7 @@
 
 
     <div class="col-xs-12 col-sm-6 sortable-layout">
-        <%= render 'widgets/shopping_list' %>
+    	<% @thisCart = @myCart #Assignment for templating %>
+        <%= render 'widgets/shopping_list', object: @thisCart %>
     </div>
 </div>

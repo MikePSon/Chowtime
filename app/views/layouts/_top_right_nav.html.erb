@@ -22,6 +22,24 @@
     			<i class="im-exit"></i>Sign out
     		<% end %>
 		</li>
+		<li role="separator" class="divider"></li>
+		<li id="toggle-sidebar-li">
+		    <a href="#" id="toggle-sidebar">
+		    	<i class="en-arrow-left2"></i>Toggle Menu
+		    </a>
+		</li>
+		<li role="separator" class="divider"></li>
+		<li>
+		    <a href="#" class="full-screen">
+		    	<i class="fa-fullscreen"></i>Fullscreen Mode
+		    </a>
+		</li>
+		<li role="separator" class="divider"></li>
+		<li>
+			<a id="clear-localstorage" class="tip" title="Reset panels position">
+		        <i class="ec-refresh"></i>Reset Panels
+			</a>
+		</li>
 
 		<% if current_user.admin? %>
 		<li role="separator" class="divider"></li>
@@ -33,5 +51,6 @@
 		<% end %>
 	</ul>
 </li>
+
 
 <% end %>

@@ -1,9 +1,48 @@
 <div class="panel panel-pink panelMove toggle panelClose">
     <!-- Start .panel -->
     <div class="panel-heading">
-        <h4 class="panel-title">Shopping List</h4>
+        <h4 class="panel-title"><i class="im-cart3"></i> Shopping List</h4>
     </div>
     <div class="panel-body">
-        some shopping list stuff
+        <div class="todo-widget">
+            <div class="todo-header">
+                <div class="todo-search">
+                    <form>
+                        <input type="text" class="form-control" name="search" placeholder="Search for todo ...">
+                    </form>
+                </div>
+                <!--<div class="todo-add">
+                    <a href="#" class="btn btn-primary tip" title="Add new todo"><i class="im-plus"></i></a>
+                </div>-->
+            </div>
+            <h4 class="todo-period">Your list</h4>
+            <ul class="todo-list" id="today">
+
+                    <% @thisCart.each do |thisItem| %>
+                        <% thisGroup = @categories.where(:id => thisItem.food_group_id).first %>
+                        <% colorArray = ["dark","brown","danger","purple","primary","success","default"] %>
+                        <% thisColor = colorArray[thisGroup.id] %>
+                    
+                        <li class="todo-task-item">
+                            <!--<label class="checkbox">
+                                <input type="checkbox">
+                            </label>
+                            <div class="todo-priority normal tip" title="Normal priority">
+                                <i class="im-radio-checked"></i>
+                            </div>-->
+                            <% thisGroup = @categories.where(:id => thisItem.food_group_id).first %>
+                            <span class="todo-category label label-<%= thisColor %>"> <%= thisGroup.groupName.downcase %> </span>
+                            <div class="todo-task-text"><%= thisItem.name %></div>
+                            <button type="button" class="close todo-close">&times;</button>
+                        </li>
+                    <% end %>
+                    <% if @myCartLength > 7 %>
+                        <li class="todo-task-item">
+                            Your cart has more items, we're just limited for space...
+                        </li>
+                    <% end %>
+
+            </ul>
+        </div>
     </div>
 </div>
